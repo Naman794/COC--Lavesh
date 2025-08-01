@@ -44,37 +44,46 @@ const HomePage: React.FC = () => {
 
       {/* Content */}
       <div className="relative z-10 min-h-screen flex flex-col items-center justify-center px-4 text-center">
+        {/* Semi-transparent overlay for better text readability */}
+        <div className="absolute inset-0 bg-gradient-to-b from-white/20 via-white/10 to-white/20 backdrop-blur-[1px]" />
+        
         <motion.div
-          className="max-w-4xl mx-auto"
+          className="max-w-4xl mx-auto relative z-10"
           initial={{ y: 50, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.3, duration: 0.8 }}
         >
           {/* Logo/Brand */}
           <motion.div
-            className="flex items-center justify-center mb-8"
+            className="flex items-center justify-center mb-8 bg-white/80 backdrop-blur-sm rounded-full px-6 py-3 shadow-lg"
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}
             transition={{ delay: 0.5, type: "spring", stiffness: 200 }}
           >
             <Leaf className="text-green-600 w-8 h-8 mr-2" />
-            <span className="text-2xl font-bold text-green-800">Pudumjee Papers</span>
+            <span className="text-2xl font-bold text-gray-800">Pudumjee Papers</span>
           </motion.div>
 
           {/* Main Headline */}
           <motion.h1
-            className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 bg-gradient-to-r from-green-800 via-blue-700 to-green-600 bg-clip-text text-transparent leading-tight"
+            className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight"
             style={{ fontFamily: 'Playfair Display, serif' }}
             initial={{ y: 30, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.6, duration: 0.8 }}
           >
-            Discover the Future of Sustainable Packaging
+            <span className="bg-white/90 backdrop-blur-sm px-4 py-2 rounded-2xl shadow-lg inline-block text-gray-800">
+              Discover the Future of
+            </span>
+            <br />
+            <span className="bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent bg-white/90 backdrop-blur-sm px-4 py-2 rounded-2xl shadow-lg inline-block mt-4">
+              Sustainable Packaging
+            </span>
           </motion.h1>
 
           {/* Subheadline */}
           <motion.p
-            className="text-lg md:text-xl lg:text-2xl text-gray-700 mb-12 max-w-3xl mx-auto leading-relaxed"
+            className="text-lg md:text-xl lg:text-2xl text-gray-800 mb-12 max-w-3xl mx-auto leading-relaxed bg-white/80 backdrop-blur-sm rounded-2xl px-6 py-4 shadow-lg"
             initial={{ y: 30, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.8, duration: 0.8 }}
@@ -85,7 +94,7 @@ const HomePage: React.FC = () => {
           {/* CTA Button */}
           <motion.button
             onClick={() => navigate('/video')}
-            className="eco-button group bg-gradient-to-r from-green-600 to-blue-600 hover:from-green-700 hover:to-blue-700 text-white px-12 py-4 rounded-full text-xl font-semibold shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 flex items-center mx-auto"
+            className="eco-button group bg-gradient-to-r from-green-600 to-blue-600 hover:from-green-700 hover:to-blue-700 text-white px-12 py-4 rounded-full text-xl font-semibold shadow-2xl hover:shadow-3xl transform hover:scale-105 transition-all duration-300 flex items-center mx-auto border-2 border-white/20"
             initial={{ y: 30, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 1, duration: 0.8 }}
